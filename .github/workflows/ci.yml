@@ -23,7 +23,7 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm install
-      - name: format code
-        run: npm prettier
-      - name: lint code
-        run: npm lint
+      - name: check format
+        run: npm run check-format
+      - name: check lint
+        run: npm run lint
