@@ -2,9 +2,9 @@ name: ci
 
 on:
   push:
-    - 'main'
+  branches: [ main ]
   pull_request:
-    - 'main'
+  branches: [ main ]
 
 
 jobs:
@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: '18.x'
+        node-version: [18.x]
 
     steps:
       - uses: actions/checkout@v3
@@ -28,5 +28,3 @@ jobs:
         run: yarn prettier
       - name: lint code
         run: yarn lint
-
-
